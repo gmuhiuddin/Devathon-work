@@ -175,6 +175,8 @@ searchBtn.addEventListener('click', showCart)
 showCart()
 
 function showCart (){
+    container.innerHTML = null
+    
     if(userSearch.value.length === 0){
 doctors.forEach((doctor) => {
     doctorCart(doctor)
@@ -203,17 +205,20 @@ function doctorCart (doctor){
     container.innerHTML += cart
 }
     let bookBtn = document.getElementsByClassName('book-btn')
+
        searchBtn.addEventListener('click',abc)
+       
     function abc (){
         for(let i = 0 ; i < bookBtn.length ; i++){
     bookBtn[i].addEventListener('click', bookAppointment)
     }
     }
     abc()
+
 function bookAppointment (){
     container.innerHTML = null
     let b = this.id
-let a = doctors[this.id-1] 
+    let a = doctors[this.id-1] 
     let appointment =  `
     <div class='container'>
     <div class='appointment-div'>
